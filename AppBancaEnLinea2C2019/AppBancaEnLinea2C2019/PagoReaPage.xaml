@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLinea2C2019.PagoReaPage"
+             BackgroundImage="img/money.png">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="Stack4"
+                     BackgroundColor="Transparent"
+                     Orientation="Vertical"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill">
+
+            <ListView x:Name="PagosList"
+                      Grid.Row="4"
+                      SeparatorVisibility="Default"
+                      BackgroundColor="Transparent"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding TRAN_DESCRIPCION_label}"
+                                       TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnRegresar"
+                    Text="Regresar"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Fill"
+                    Clicked="RegresarTapped"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

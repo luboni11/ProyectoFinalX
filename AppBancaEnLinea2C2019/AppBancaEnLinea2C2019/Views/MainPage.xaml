@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLinea2C2019.Views.MainPage"
+             BackgroundImage="img/bank.png">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="Stack2"
+                     BackgroundColor="Transparent"
+                     Orientation="Vertical"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill">
+
+            <ListView x:Name="CuentasList"
+                      Grid.Row="4"
+                      SeparatorVisibility="Default"
+                      BackgroundColor="Transparent"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding CUE_DESCRIPCION_label}"
+                                       TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Button x:Name="btnAgregar" 
+                    Text="Agregar"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HorizontalOptions="Fill"
+                    Clicked="AgregarTapped"/>
+            <Button Text="Actualizar"
+                    TextColor="White"
+                    BackgroundColor="Navy"
+                    Clicked="ActualizarTapped"/>
+            <Button x:Name="btnEliminar" 
+                    Text="Eliminar"
+                    TextColor="White"
+                    BackgroundColor="Gray"
+                    HorizontalOptions="Fill"
+                    Clicked="EliminarTapped"/>
+            <Button x:Name="btnPagos"
+                    Text="Pagar Servicios"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    HorizontalOptions="Fill"
+                    Clicked="PagarTapped"/>
+            <Button x:Name="btnTransferencia"
+                    Text="Realizar Transferencia"
+                    TextColor="White"
+                    BackgroundColor="Brown"
+                    HorizontalOptions="Fill"
+                    Clicked="TransferenciaTapped"/>
+            <Button x:Name="btnPagoRealizado"
+                    Text="Pagos Realizados"
+                    TextColor="White"
+                    BackgroundColor="Pink"
+                    HorizontalOptions="Fill"
+                    Clicked="PagoRealizadoTapped"/>
+            <Button x:Name="btnTranRealizado"
+                    Text="Transferencias Realizadas"
+                    TextColor="White"
+                    BackgroundColor="Blue"
+                    HorizontalOptions="Fill"
+                    Clicked="TranRealizadoTapped"/>
+            <Button x:Name="btnCerrarSesion" 
+                    Text="Cerrar Sesión"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    HorizontalOptions="Fill"
+                    Clicked="CerrarTapped"/>
+        </StackLayout>      
+    </ContentPage.Content>
+</ContentPage>

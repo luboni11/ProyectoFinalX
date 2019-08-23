@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLinea2C2019.Views.PagoPage"
+             BackgroundImage="img/money.png">
+
+    <ContentPage.Content>        
+        <StackLayout x:Name="Stack6"
+                     BackgroundColor="Transparent"
+                     Orientation="Vertical"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill"
+                     Padding="30">
+
+        <ListView x:Name="PagoList" 
+                  Grid.Row="4"
+                  SeparatorVisibility="Default"
+                  BackgroundColor="Transparent"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Fill">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding PAG_DESCRIPCION_label}"
+                                       TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Picker x:Name="pkrServicios"
+                    Title="Seleccione un servicio"
+                    FontSize="Small"
+                    ItemDisplayBinding="{Binding SER_DESCRIPCION}"/>
+
+            <Picker x:Name="pkrCuentas"
+                    Title="Seleccione una cuenta"
+                    FontSize="Small" 
+                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+
+            <Entry x:Name="txtMonto"
+               Placeholder="Ingrese el monto"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Fill"
+               FontSize="Small"
+               Keyboard="Numeric"/>
+
+            <Button Text="Limpiar"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    Clicked="Limpiar"/>
+                    
+            <Button Text="Regresar"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    Clicked="RegresarTapped"/>
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--Entry es el textbox y Picker es la lista-->

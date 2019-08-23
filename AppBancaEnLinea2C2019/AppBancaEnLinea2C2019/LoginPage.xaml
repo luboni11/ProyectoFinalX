@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancaEnLinea2C2019.LoginPage" 
+             BackgroundImage="img/background.png"
+             xmlns:userControls="clr-namespace:AppBancaEnLinea2C2019.UserControls;assembly=AppBancaEnLinea2C2019">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="Stack1"
+                         Padding="10,150,10,10"
+                         BackgroundColor="Transparent" 
+                         Orientation="Vertical" 
+                         HorizontalOptions="Fill" 
+                         VerticalOptions="Fill">
+
+                <Image x:Name="logo"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Center"/>
+
+                <userControls:FontAwesomeLabel Text="&#xf090; Bienvenido al Banco ULACIT"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               FontSize="18"
+                                               FontAttributes="None"
+                                               TextColor="White"/>           
+                
+                <Label Text="Ingrese sus credenciales" 
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+                
+                <Entry x:Name="txtUsername"
+                       Placeholder="Username" 
+                       HorizontalTextAlignment="Center" />
+                
+                <!-- Comentarios -->
+                <Entry x:Name="txtPassword"
+                       IsPassword="true"
+                       Placeholder="Password" 
+                       HorizontalTextAlignment="Center" />
+
+                <Button BorderColor="Navy"
+                        FontSize="16"
+                        Text="&#xf090; Iniciar Sesion"
+                        BackgroundColor="Navy"
+                        TextColor="Silver" 
+                        CornerRadius="10"
+                        Clicked="LoginWS">
+
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.otf#FontAwesome" iOS="FontAwesome" />
+                    </Button.FontFamily>
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

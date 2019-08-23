@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppBancaEnLinea2C2019.Views.TransferPage"
+             BackgroundImage="img/money.png">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="Stack5"
+                     BackgroundColor="Transparent"
+                     Orientation="Vertical"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Padding="30">
+
+            <Label TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="Large"> Transferencias Realizadas </Label>
+
+            <ListView x:Name="transferenciaList" 
+                      Grid.Row="4"
+                      SeparatorVisibility="Default"
+                      BackgroundColor="Transparent"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding TRAN_DESCRIPCION_label}"
+                                       TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Picker x:Name="pkrCuentas"
+                    Title="Seleccione una cuenta origen"
+                    FontSize="Small" 
+                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+
+            <Picker x:Name="pkrCuentasDestino"
+                    Title="Seleccione una cuenta destino"
+                    FontSize="Small" 
+                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+
+            <Entry x:Name="txtMonto"
+               Placeholder="Ingrese el monto"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Fill"
+               FontSize="Small"
+               Keyboard="Numeric"/>
+
+            <Button x:Name="Transferir"
+                    Text="Realizar Transferencia"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    Clicked="AgregarTapped"/>
+
+            <Button Text="Limpiar"
+                    TextColor="Beige"
+                    BackgroundColor="Maroon"
+                    Clicked="Limpiar"/>
+            
+            <Button Text="Regresar"
+                    TextColor="White"
+                    BackgroundColor="Brown"
+                    Clicked="RegresarTapped"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

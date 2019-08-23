@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLinea2C2019.Views.CuentaPage">
+
+    <ContentPage.Content>        
+        <StackLayout x:Name="Stack7"
+                     BackgroundColor="Transparent"
+                     Orientation="Vertical"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Center">
+
+            <Entry x:Name="txtCodigo"
+                   Placeholder="Ingrese código"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   FontSize="Small"/>
+            <Entry x:Name="txtDescripcion"
+                   Placeholder="Ingrese descripción"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   FontSize="Small"/>
+            <Picker x:Name="pkrMoneda" 
+                    Title="Seleccione una moneda"
+                    FontSize="Small">
+                <Picker.Items>
+                    <x:String> Colones </x:String>
+                    <x:String> Dólares </x:String>
+                    <x:String> Euros </x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="txtSaldo"
+                   Placeholder="Ingrese saldo"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   FontSize="Small"/>
+            <Picker x:Name="pkrEstado" 
+                    Title="Seleccione un estado"
+                    FontSize="Small">
+                <Picker.Items>
+                    <x:String> Activo </x:String>
+                    <x:String> Inactivo </x:String>
+                </Picker.Items>
+            </Picker>                   
+            <Button Text="Agregar"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    Clicked="AgregarTapped"/>
+            <Button Text="Actualizar"
+                    TextColor="White"
+                    BackgroundColor="Navy"
+                    Clicked="ActualizarTapped"/>
+            <Button Text="Limpiar"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    Clicked="Limpiar"/>
+            <Button Text="Regresar"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    Clicked="RegresarTapped"/>
+            
+        </StackLayout>           
+    </ContentPage.Content>
+</ContentPage>
